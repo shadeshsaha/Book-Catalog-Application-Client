@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import BookPage from "../pages/Book/BookPage";
 import Home from "../pages/Home/Home";
-// import NotFound from "../pages/shared/NotFound";
+import NotFound from "../pages/shared/NotFound";
 
 const routes = createBrowserRouter([
   {
@@ -20,10 +20,10 @@ const routes = createBrowserRouter([
     ],
   },
 
-  // {
-  //   path: "*",
-  //   element: <NotFound />,
-  // },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
 
 export default routes;
