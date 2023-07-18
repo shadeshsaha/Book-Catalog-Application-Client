@@ -17,4 +17,3 @@ const PrivateRoute = ({ children }: IProps) => {
 };
 
 export default PrivateRoute;
-
