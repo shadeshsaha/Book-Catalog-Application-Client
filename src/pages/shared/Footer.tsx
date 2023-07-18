@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="footer footer-center  p-10 bg-gray-600 text-base-content rounded">
         <div className="grid grid-flow-col gap-4 text-white">
           <Link to="/about-us" className="link link-hover ">
-            AboutUs
+            About Us
           </Link>
           <Link to="/contactUs" className="link link-hover">
             Contact
@@ -18,7 +18,7 @@ const Footer = () => {
             News
           </Link>
           <Link to="/events" className="link link-hover">
-            events
+            Events
           </Link>
         </div>
         <div>
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
         <div>
           <p className="text-white font-bold">
-            Copyright © 2023 - All right reserved by
+            Copyright © 2023 - All right reserved by &nbsp;
             <Link className="text-cyan-300 underline" target="_blank" to="#">
               Shadesh Ram Gour
             </Link>

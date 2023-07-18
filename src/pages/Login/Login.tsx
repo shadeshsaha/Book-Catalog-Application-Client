@@ -11,7 +11,7 @@ import Lottie from "lottie-react";
 
 import { ReactNode } from "react";
 import { toast } from "react-hot-toast";
-import login from "../../assets/animation/38435-register.json";
+import login from "../../assets/animation/animation_lk8rulty.json";
 import { loginUser } from "../../redux/features/auth/authSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 
@@ -54,95 +54,91 @@ const Login = () => {
 
   return (
     <div className="main-container  p-4 py-20 md:hero min-h-screen   justify-items-center">
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className=" text-center">
-            <h1 className="text-5xl font-bold">
-              Login <span className="text-blue-500">Here !</span>{" "}
-            </h1>
+      {/* <div className="hero min-h-screen bg-base-200"> */}
+      <div className="hero hero-content flex-col lg:flex-row-reverse">
+        <div className=" text-center">
+          <h1 className="text-4xl font-bold ml-20">
+            Login <span className="text-blue-500">Here !</span>{" "}
+          </h1>
 
-            <div className="w-1/8 mb-10 md:mb-0 mx-auto">
-              <Lottie animationData={login} loop={true} />
-            </div>
+          <div className="w-1/8 mb-10 md:mb-0 mx-auto ml-20">
+            <Lottie animationData={login} loop={true} />
           </div>
+        </div>
 
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="md:hero font-bold "
-          >
-            <div className="card flex-shrink-0 w-full max-w-screen-sm  shadow-2xl ">
-              <div className="card-body">
-                {/* email */}
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Your Email:</span>
-                  </label>
-
-                  <input
-                    {...register("email", {
-                      required: "Email is required",
-                      validate: {
-                        maxLength: (v) =>
-                          v.length <= 50 ||
-                          "The email should have at most 50 characters",
-                        matchPattern: (v) =>
-                          /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
-                            v
-                          ) || "Email address must be a valid address",
-                      },
-                    })}
-                    name="email"
-                    placeholder="Email"
-                    className="input input-bordered"
-                  />
-
-                  {errors.email && (
-                    <small className="text-red-600">
-                      {errors.email.message as ReactNode}
-                    </small>
-                  )}
-                </div>
-
-                {/* Password */}
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Password : </span>
-                  </label>
-                  <input
-                    {...register("password", { required: true })}
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    className="input input-bordered"
-                  />
-                  {errors.password?.type === "required" && (
-                    <span className="text-red-600">Password is required!</span>
-                  )}
-                </div>
-
+        <form onSubmit={handleSubmit(onSubmit)} className="md:hero font-bold ">
+          <div className="card flex-shrink-0 w-full max-w-screen-sm  shadow-2xl ">
+            <div className="card-body">
+              {/* email */}
+              <div className="form-control">
                 <label className="label">
-                  <Link
-                    to="/forgot-password"
-                    className="label-text-alt text-blue-500 "
-                  >
-                    Forgot password?
-                  </Link>
+                  <span className="label-text">Email:</span>
                 </label>
 
-                <div className="form-control mt-6">
-                  <button className="btn btn-primary">Login</button>
-                  <p className="text-sm font-bold mt-4">
-                    Don't you have any Account ?{" "}
-                    <Link to="/signup" className="text-blue-500 ">
-                      Register
-                    </Link>{" "}
-                  </p>
-                </div>
+                <input
+                  {...register("email", {
+                    required: "Email is required",
+                    validate: {
+                      maxLength: (v) =>
+                        v.length <= 50 ||
+                        "The email should have at most 50 characters",
+                      matchPattern: (v) =>
+                        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+                        "Email address must be a valid address",
+                    },
+                  })}
+                  name="email"
+                  placeholder="Email"
+                  className="input input-bordered"
+                />
+
+                {errors.email && (
+                  <small className="text-red-600">
+                    {errors.email.message as ReactNode}
+                  </small>
+                )}
+              </div>
+
+              {/* Password */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Password : </span>
+                </label>
+                <input
+                  {...register("password", { required: true })}
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  className="input input-bordered"
+                />
+                {errors.password?.type === "required" && (
+                  <span className="text-red-600">Password is required!</span>
+                )}
+              </div>
+
+              <label className="label">
+                <Link
+                  to="/forgot-password"
+                  className="label-text-alt text-blue-500 "
+                >
+                  Forgot password?
+                </Link>
+              </label>
+
+              <div className="form-control mt-6">
+                <button className="btn btn-primary">Login</button>
+                <p className="text-sm font-bold mt-4">
+                  Don't Have Any Account ?{" "}
+                  <Link to="/signup" className="text-blue-500 ">
+                    Register
+                  </Link>{" "}
+                </p>
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
+      {/* </div> */}
     </div>
   );
 };

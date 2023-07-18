@@ -18,7 +18,7 @@ export const loginUser = createAsyncThunk(
   async ({ email, password }: { email: string; password: string }) => {
     try {
       const response = await fetch(
-        "https://server-book-catalog-application.vercel.app/api/v1/auth/login",
+        "https://book-catalog-application-server-seven.vercel.app/api/v1/auth/login",
         {
           method: "POST",
           body: JSON.stringify({ email, password }),

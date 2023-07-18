@@ -29,22 +29,22 @@ const NavBar = () => {
 
   const navOptions = (
     <>
-      <li className="nav-link nav-link-ltr ">
+      <li className="nav-link">
         <Link to="/" className="hover:text-white hover:bg-transparent">
           Home
         </Link>
       </li>
-      <li className="nav-link nav-link-ltr">
+      <li className="nav-link">
         <Link to="/books" className="hover:text-white hover:bg-transparent">
           Books
         </Link>
       </li>
-      <li className="nav-link nav-link-ltr">
+      <li className="nav-link">
         <Link to="/wishlist" className="hover:text-white hover:bg-transparent">
           WishList
         </Link>
       </li>
-      <li className="nav-link nav-link-ltr">
+      <li className="nav-link">
         <Link
           to="/add-new-book"
           className="hover:text-white hover:bg-transparent"
@@ -88,14 +88,18 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar fixed z-20  max-w-screen-2xl bg-gray-600	 ">
+    <div
+      className="navbar fixed z-20  max-w-screen-2xl"
+      style={{ backgroundColor: "#727088" }}
+      // bg-gray-900
+    >
       <div className="navbar-start">
         <div className="dropdown ">
           {!isDropdownOpen ? (
             <label
               tabIndex={0}
               onClick={toggleDropdown}
-              className="btn btn-ghost   lg:hidden"
+              className="btn btn-ghost lg:hidden"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +150,7 @@ const NavBar = () => {
         </div>
 
         <Link to="/" className="btn btn-ghost normal-case text-white text-xl">
-          BookMania{" "}
+          PageTurner
         </Link>
       </div>
 
