@@ -6,7 +6,6 @@ import MainLayout from "./layouts/MainLayout";
 import { setLoading, setUserEmail } from "./redux/features/auth/authSlice";
 
 function App() {
-  
   const checkIfUserIsAuthenticated = () => {
     const token = localStorage.getItem("token");
     return !!token;
@@ -23,8 +22,6 @@ function App() {
     }
     dispatch(setLoading(false));
   }, [dispatch]);
-
-
 
   return (
     <>

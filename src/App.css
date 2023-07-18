@@ -64,15 +64,11 @@
   height: 5px;
 }
 
-
-
 /*  */
 
 .drawer-side {
   background-attachment: fixed;
 }
-
-
 
 .cart-slider-list {
   height: 100%;
@@ -82,4 +78,3 @@
 body.drawer-open {
   overflow: hidden;
 }
-
