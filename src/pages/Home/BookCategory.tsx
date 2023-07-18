@@ -14,7 +14,7 @@ const BooksCategory = () => {
   const booksData = data?.data?.data;
 
   if (isLoading) {
-    return <Loading/>;
+    return <Loading />;
   }
   return (
     <div className="mb-5 ">

@@ -56,14 +56,14 @@ const BookFilter = ({
       >
         <option value="">All Years</option>
         <option value="2021">2021</option>
-      
       </select>
 
-        <Link to="/add-new-book" className="hover:text-black btn btn-primary mt-5 hover:bg-transparent">
+      <Link
+        to="/add-new-book"
+        className="hover:text-black btn btn-primary mt-5 hover:bg-transparent"
+      >
         Add New Books
-        </Link>
-    
-
+      </Link>
     </div>
   );
 };

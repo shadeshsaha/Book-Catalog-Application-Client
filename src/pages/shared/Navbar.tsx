@@ -8,7 +8,6 @@ import {
   setFirstName,
   setUserEmail,
 } from "../../redux/features/auth/authSlice";
-import { useCreateWishListMutation } from "../../redux/features/wishlist/wishListApi";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 
 const NavBar = () => {
@@ -67,7 +66,6 @@ const NavBar = () => {
   const dispatch = useAppDispatch();
 
   const handleLogOut = () => {
-
     localStorage.removeItem("token");
     localStorage.removeItem("email");
     localStorage.removeItem("firstName");
@@ -191,7 +189,9 @@ const NavBar = () => {
             </div>
           </div>
         </>
-        {firstName && <p className="font-bold mr-3 text-cyan-400">{firstName}</p>}
+        {firstName && (
+          <p className="font-bold mr-3 text-cyan-400">{firstName}</p>
+        )}
         {accessToken ? (
           <button onClick={handleLogOut} className="btn btn-sm btn-outline ">
             <span className="text-white text-xs">logout</span>

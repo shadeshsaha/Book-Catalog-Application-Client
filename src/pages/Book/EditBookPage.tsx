@@ -3,25 +3,21 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import defaultBook from "../../assets/defaultbook.jpg";
 import {
   useDeleteBookMutation,
   useEditBookMutation,
   useSingleBookQuery,
 } from "../../redux/features/book/bookApi";
-import { addToCart } from "../../redux/features/cart/cartSlice";
-import { useAppDispatch } from "../../redux/hook";
-import { IBook } from "../../types/bookTypes";
 
 import { ReactNode, useEffect } from "react";
+import Swal from "sweetalert2";
 import Footer from "../shared/Footer";
 import Loading from "../shared/Loading";
 import NotFound from "../shared/NotFound";
-import Swal from "sweetalert2";
 
 const EditBookPage = () => {
-
   const {
     register,
     handleSubmit,
@@ -76,7 +72,7 @@ const EditBookPage = () => {
 
     if (statusCode === 200) {
       toast.success("Book Edited SuccessFully");
-      navigate(`/book-details/${id}`)
+      navigate(`/book-details/${id}`);
     } else {
       toast.error("Internal Server Error!! please try again Later");
     }
@@ -84,22 +80,20 @@ const EditBookPage = () => {
   };
 
   const handleDeleteBook = async (id: any) => {
-  
     Swal.fire({
-      title: 'Do you want to delete this Book ?',
+      title: "Do you want to delete this Book ?",
       showDenyButton: false,
       showCancelButton: true,
-      confirmButtonText: 'Delete Book',
+      confirmButtonText: "Delete Book",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        Swal.fire('Deleted!', '', 'success');
+        Swal.fire("Deleted!", "", "success");
         result = await deleteBook(id).unwrap();
-        navigate("/books")
+        navigate("/books");
       }
     });
-
   };
-  
+
   const loggedInEmail = localStorage.getItem("email");
   if (isLoading) {
     return <Loading />;

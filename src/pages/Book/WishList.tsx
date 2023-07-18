@@ -33,15 +33,13 @@ const WishList = () => {
   };
 
   const handleMarkBookStatus = async (book: IBook, status: string) => {
- 
-    const updatedStatus = !book.finishedReading; 
-  
+    const updatedStatus = !book.finishedReading;
+
     const options = {
       email: email,
       wishlistItemId: book._id,
       finishedReading: updatedStatus,
     };
-  
 
     const result = await updateWishList(options).unwrap();
     if (result.success) {
@@ -50,7 +48,6 @@ const WishList = () => {
       toast.error("Failed to update book status.");
     }
   };
-  
 
   return (
     <div className="p-2 shadow-xl py-32">

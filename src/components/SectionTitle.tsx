@@ -1,6 +1,6 @@
 export type sectionTitle = {
   heading: string;
-  subHeading: string|null;
+  subHeading: string | null;
 };
 
 const SectionTitle = ({ heading, subHeading }: sectionTitle) => {

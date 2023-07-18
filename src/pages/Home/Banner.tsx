@@ -10,11 +10,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Banner = () => {
   return (
     <>
-      <Carousel
-        autoPlay={true}
-        infiniteLoop={true}
-        swipeable={true}
-      >
+      <Carousel autoPlay={true} infiniteLoop={true} swipeable={true}>
         <div>
           <img src={img1} />
           <div className="absolute h-full flex rounded-xl  md:p-0  py-16 items-center  left-0 top-0 ">
@@ -82,8 +78,6 @@ const Banner = () => {
           </div>
         </div>
       </Carousel>
-
-  
     </>
   );
 };

@@ -113,7 +113,6 @@ const AddNewBook = () => {
                   )}
                 </div>
 
-        
                 {/* Genre */}
                 <div className="form-control">
                   <label className="label">
@@ -125,7 +124,6 @@ const AddNewBook = () => {
                     className="input input-bordered"
                     aria-invalid={errors.genre ? "true" : "false"}
                   >
-                   
                     <option value="nonfiction">Non-fiction</option>
                     <option value="humor">Humor</option>
                     <option value="memoir">Memoir</option>

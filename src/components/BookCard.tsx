@@ -31,12 +31,11 @@ const BookCard = ({ book }: IProps) => {
   const handleWishList = async (book: IBook) => {
     try {
       const options = {
-        data: { wishList: book, email: email},
+        data: { wishList: book, email: email },
       };
       const result = await createWishList(options).unwrap();
       toast.success("Book is Added to Wishlist Successfully!");
     } catch (error) {
-     
       toast.error("WishList is Already Exists");
     }
   };
