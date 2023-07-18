@@ -18,5 +18,4 @@ export type ISignUpTypes = {
   password: string;
   firstName: string;
   lastName: string;
-
 };

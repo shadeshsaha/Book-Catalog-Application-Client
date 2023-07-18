@@ -4,13 +4,11 @@ import { IBook } from "../../../types/bookTypes";
 
 type Iwish = {
   wishList: IBook[];
-}
+};
 const storedwish = localStorage.getItem("wishlist");
-const initialwishState: Iwish =
-
-storedwish ? JSON.parse(storedwish) : { wishList: [] };
-
-
+const initialwishState: Iwish = storedwish
+  ? JSON.parse(storedwish)
+  : { wishList: [] };
 
 const wishSlice = createSlice({
   name: "wishlist",
@@ -22,7 +20,9 @@ const wishSlice = createSlice({
     },
 
     removeFromwish: (state, action: PayloadAction<IBook>) => {
-      state.wishList = state.wishList.filter((wishList) => wishList.id !== action.payload.id);
+      state.wishList = state.wishList.filter(
+        (wishList) => wishList.id !== action.payload.id
+      );
 
       localStorage.setItem("wishlist", JSON.stringify(state));
     },

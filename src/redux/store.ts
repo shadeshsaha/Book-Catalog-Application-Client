@@ -3,10 +3,12 @@ import { api } from "./api/apiSlice";
 import authReducer from "./features/auth/authSlice";
 import bookReducer from "./features/book/bookSlice";
 import cartReducer from "./features/cart/cartSlice";
+import WishListReducer from "./features/wishlist/wishSlice";
 
 const store = configureStore({
   reducer: {
     cart: cartReducer,
+    wishlist: WishListReducer,
     auth: authReducer,
     book: bookReducer,
     [api.reducerPath]: api.reducer,
