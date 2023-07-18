@@ -35,18 +35,15 @@ const BookPage = () => {
     dispatch(setPriceRange(value[0]));
   };
 
-
-
-  filteredData = data?.data?.data.filter((item: { status: boolean; price: number }) => {
-    if (status) {
-      return item.status === true && item.price < priceRange;
+  filteredData = data?.data?.data.filter(
+    (item: { status: boolean; price: number }) => {
+      if (status) {
+        return item.status === true && item.price < priceRange;
+      }
+      return priceRange > 0 ? item.price < priceRange : true;
     }
-    return priceRange > 0 ? item.price < priceRange : true;
-  });
-  
+  );
 
-
-  
   const handleGenreFilter = () => {
     let updatedData = booksData;
 
