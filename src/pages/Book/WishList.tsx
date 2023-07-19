@@ -35,6 +35,7 @@ const WishList = () => {
   };
 
   const handleMarkBookStatus = async (book: IBook, status: string) => {
+    console.log(status); //
     const updatedStatus = !book.finishedReading;
 
     const options = {

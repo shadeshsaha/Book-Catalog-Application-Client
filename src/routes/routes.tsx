@@ -28,7 +28,6 @@ const routes = createBrowserRouter([
         path: "/wishlist",
         element: (
           <PrivateRoute>
-            {" "}
             <WishlistPage />
           </PrivateRoute>
         ),
@@ -41,8 +40,7 @@ const routes = createBrowserRouter([
         path: "add-new-book",
         element: (
           <PrivateRoute>
-            {" "}
-            <AddNewBook />{" "}
+            <AddNewBook />
           </PrivateRoute>
         ),
       },
