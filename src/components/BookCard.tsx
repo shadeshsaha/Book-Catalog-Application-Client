@@ -5,6 +5,7 @@ import defaultBook from "../assets/defaultbook.jpg";
 import { toast } from "react-hot-toast";
 import { useCreateWishListMutation } from "../redux/features/wishlist/wishListApi";
 import { IBook } from "../types/bookTypes";
+import { Button } from "./Button";
 
 interface IProps {
   book: IBook;
@@ -41,28 +42,33 @@ const BookCard = ({ book }: IProps) => {
   };
 
   return (
-    <div className="card w-65  border-solid border-2 border-sky-500 shadow-xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300">
+    <div className="card w-65  border-solid border-2 border-gray-400 shadow-xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300">
       <figure className="px-10 pt-2">
         <img src={bookImage || defaultBook} alt="Book" className="rounded-xl" />
       </figure>
       <div className="card-body items-center text-center py-3">
-        <h6 className="text-cyan-400 ">Book Id : {id}</h6>
-        <h6 className="font-bold" style={{ fontSize: 25 }}>
-          {title}
-        </h6>
+        <h6 className="text-black-400 ">Book ID : {id}</h6>
+        <h6 style={{ fontSize: 25, fontWeight: "bold" }}>{title}</h6>
         <h6 className="text-cyan-700 font-bold ">Author: {author}</h6>
-        <h6 className=" text-blue-400 ">Genre: {genre}</h6>
+        <h6 className=" text-dark-400 ">Genre: {genre}</h6>
         {/* <p>${price}</p>{" "} */}
         <p>Publication Date: {publicationDate}</p>
         <Link to={`/book-details/${id}`}>
-          <button className="btn btn-outline btn-primary btn-sm mx-2  ">
+          {/* <button className="btn btn-outline btn-primary btn-sm mx-2  ">
             Show Details
-          </button>
+          </button> */}
+          <Button
+            // variant="default"
+            className="btn-outline btn-sm mx-2 w-full"
+            // className="w-full"
+          >
+            VIEW DETAILS
+          </Button>
         </Link>
         {loggedInEmail && (
           <button
             onClick={() => handleWishList(book)}
-            className="btn btn-outline btn-defult btn-sm mx-2  "
+            className="btn btn-outline btn-defult btn-sm mx-2 w-full ml-5"
           >
             Add to WishList
           </button>

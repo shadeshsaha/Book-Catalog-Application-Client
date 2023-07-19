@@ -91,14 +91,14 @@ const BookDetails = () => {
           />
           <div>
             <p className="text-xs font-bold">{id}</p>
-            <h1 className="text-xl text-cyan-400 font-bold">
+            <h1 className="text-xl text-black-600 font-bold">
               {bookData?.title}
             </h1>
 
-            <p className=" text-md text-teal-500 font-semibold ">
+            <p className=" text-md text-black-500 font-semibold ">
               Written By : {bookData?.author}
             </p>
-            <p className=" text-md text-red-400 font-semibold ">
+            <p className=" text-md text-black-400 font-semibold ">
               Genre : {bookData?.genre}
             </p>
 
@@ -133,10 +133,16 @@ const BookDetails = () => {
 
                 <button
                   onClick={() => handleAddBook(bookData)}
-                  className="btn btn-outline btn-primary btn-sm mx-2  "
+                  className="btn btn-outline btn-primary btn-sm mx-2"
                 >
                   Add to Cart
                 </button>
+                {/* <Button
+                  onClick={() => handleAddBook(bookData)}
+                  className="btn-outline btn-sm mx-2  "
+                >
+                  ADD TO CART
+                </Button> */}
               </>
             )}
 

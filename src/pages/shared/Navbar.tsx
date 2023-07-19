@@ -89,7 +89,7 @@ const NavBar = () => {
 
   return (
     <div
-      className="navbar fixed z-20  max-w-screen-2xl"
+      className="navbar fixed z-20 max-w-screen-2xl"
       style={{ backgroundColor: "#727088" }}
       // bg-gray-900
     >

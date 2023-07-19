@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import signup from "../../assets/animation/addNewBook.json";
+import { Button } from "../../components/Button";
 import { usePostBookMutation } from "../../redux/features/book/bookApi";
 const AddNewBook = () => {
   const {
@@ -240,9 +241,16 @@ const AddNewBook = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                  <button className="btn font-bold btn-primary">
+                  {/* <button className="btn font-bold btn-primary">
                     Add Book
-                  </button>
+                  </button> */}
+                  <Button
+                    // variant="default"
+                    className="btn-outline btn-sm mx-2 w-full"
+                    // className="w-full"
+                  >
+                    Add Book
+                  </Button>
                 </div>
               </div>
             </div>

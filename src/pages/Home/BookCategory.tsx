@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import BookCard from "../../components/BookCard";
+import { Button } from "../../components/Button";
 import SectionTitle from "../../components/SectionTitle";
 import { useGetBooksQuery } from "../../redux/features/book/bookApi";
 import { IBook } from "../../types/bookTypes";
@@ -32,10 +33,12 @@ const BooksCategory = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <button className="btn  ml-5 btn-primary">
-          {" "}
+        <Button className="btn-outline btn-sm mx-2">
           <Link to="/books">See All Books</Link>
-        </button>
+        </Button>
+        {/* <button className="btn  ml-5 btn-primary">
+          <Link to="/books">See All Books</Link>
+        </button> */}
       </div>
     </div>
   );

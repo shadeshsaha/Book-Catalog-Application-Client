@@ -1,6 +1,8 @@
 <!-- # Book Catalog Application Client -->
 
-# Website name - `Book Catalog Application`
+# Website name - `PageTurner 📚`
+
+<!-- `Book Catalog Application` -->
 
 ## Github link
 

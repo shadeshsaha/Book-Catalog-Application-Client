@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { options } from "../../components/BookOptions";
+import { Button } from "../../components/Button";
 
 const BookFilter = ({
   priceRange,
@@ -71,9 +72,16 @@ const BookFilter = ({
 
       <Link
         to="/add-new-book"
-        className="hover:text-black btn btn-primary mt-5 hover:bg-transparent"
+        // className="hover:text-black btn btn-primary mt-5 hover:bg-transparent"
       >
-        Add New Books
+        {/* Add New Books */}
+        <Button
+          variant="default"
+          // className="btn-outline btn-sm mx-2 w-full"
+          className="hover:text-black btn btn-primary mt-5 hover:bg-transparent w-full"
+        >
+          Add New Books
+        </Button>
       </Link>
     </div>
   );
