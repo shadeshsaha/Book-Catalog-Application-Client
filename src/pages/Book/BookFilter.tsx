@@ -3,7 +3,7 @@ import { options } from "../../components/BookOptions";
 import { Button } from "../../components/Button";
 
 const BookFilter = ({
-  priceRange,
+  // priceRange,
   setSelectedGenre,
   setSearchText,
   searchText,

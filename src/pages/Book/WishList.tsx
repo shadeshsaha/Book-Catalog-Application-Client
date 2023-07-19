@@ -28,11 +28,12 @@ const WishList = () => {
       email: email,
       wishlistItemId: book._id,
     };
-    const result = await deleteWish(options).unwrap();
+    // const result = await deleteWish(options).unwrap();
     toast.success("Book is removed from the Wishlist!!");
   };
 
   const handleMarkBookStatus = async (book: IBook, status: string) => {
+    console.log(status);
     const updatedStatus = !book.finishedReading;
 
     const options = {
