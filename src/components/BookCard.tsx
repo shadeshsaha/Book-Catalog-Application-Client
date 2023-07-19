@@ -41,16 +41,19 @@ const BookCard = ({ book }: IProps) => {
   };
 
   return (
-    <div className="card w-64  border-solid border-2 border-sky-500 shadow-xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300">
+    <div className="card w-65  border-solid border-2 border-sky-500 shadow-xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300">
       <figure className="px-10 pt-2">
         <img src={bookImage || defaultBook} alt="Book" className="rounded-xl" />
       </figure>
       <div className="card-body items-center text-center py-3">
         <h6 className="text-cyan-400 ">Book Id : {id}</h6>
-        <h6 className="font-bold  ">{title}</h6>
-        <h6 className="text-cyan-700 font-bold ">Written By : {author}</h6>
-        <h6 className=" text-blue-400 ">Genre : {genre}</h6>
-        <p>${price}</p>{" "}
+        <h6 className="font-bold" style={{ fontSize: 25 }}>
+          {title}
+        </h6>
+        <h6 className="text-cyan-700 font-bold ">Author: {author}</h6>
+        <h6 className=" text-blue-400 ">Genre: {genre}</h6>
+        {/* <p>${price}</p>{" "} */}
+        <p>Publication Date: {publicationDate}</p>
         <Link to={`/book-details/${id}`}>
           <button className="btn btn-outline btn-primary btn-sm mx-2  ">
             Show Details

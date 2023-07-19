@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { options } from "../../components/BookOptions";
 
 const BookFilter = ({
   priceRange,
@@ -13,17 +14,19 @@ const BookFilter = ({
 }: any) => {
   return (
     <div className="p-5">
-      <h1 className="text-2xl uppercase">Price Range</h1>
-      <input
-        type="range"
-        defaultValue={50}
-        max={400}
-        min={0}
-        step={1}
-        onChange={handleRangeChange}
-        className="range range-info"
-      />
-      <h1 className="font-bold mb-2 text-red-500 ">From 0$ To {value}$</h1>
+      <div>
+        <h1 className="text-2xl uppercase">Price Range</h1>
+        <input
+          type="range"
+          defaultValue={50}
+          max={400}
+          min={0}
+          step={1}
+          onChange={handleRangeChange}
+          className="range range-info"
+        />
+        <h1 className="font-bold mb-2 text-red-500 ">From 0$ To {value}$</h1>
+      </div>
 
       <input
         type="text"
@@ -46,7 +49,11 @@ const BookFilter = ({
         <option value="horror">Horror</option>
         <option value="nystery">Mystery & Thriller</option>
         <option value="historical">Historical Fiction</option>
-        <option value="science">Science-Fiction</option>
+        <option value="science-fiction">Science-Fiction</option>
+        <option value="motivational">Motivational</option>
+        <option value="mystery">Mystery</option>
+        <option value="self-development">Self-Development</option>
+        <option value="novels">Novels</option>
       </select>
 
       <select
@@ -54,8 +61,12 @@ const BookFilter = ({
         value={selectedYear}
         onChange={(e) => setSelectedYear(e.target.value)}
       >
-        <option value="">All Years</option>
-        <option value="2021">2021</option>
+        <option value="">Publication Year</option>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
       </select>
 
       <Link

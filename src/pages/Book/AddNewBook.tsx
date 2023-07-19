@@ -131,7 +131,11 @@ const AddNewBook = () => {
                     <option value="horror">Horror</option>
                     <option value="nystery">Mystery & Thriller</option>
                     <option value="historical">Historical Fiction</option>
-                    <option value="science">Science-Fiction</option>
+                    <option value="science-fiction">Science-Fiction</option>
+                    <option value="motivational">Motivational</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="self-development">Self-Development</option>
+                    <option value="novels">Novels</option>
                   </select>
                   {errors.genre?.type === "required" && (
                     <small className="text-red-600">Genre is required!</small>
