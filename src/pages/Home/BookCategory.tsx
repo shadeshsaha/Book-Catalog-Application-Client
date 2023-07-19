@@ -7,8 +7,7 @@ import { IBook } from "../../types/bookTypes";
 import Loading from "../shared/Loading";
 
 const BooksCategory = () => {
-  const { data, isLoading } = useGetBooksQuery(undefined, {
-    // const { data, isLoading, error } = useGetBooksQuery(undefined, {
+  const { data, isLoading, error } = useGetBooksQuery(undefined, {
     refetchOnMountOrArgChange: true,
     pollingInterval: 40000,
   });

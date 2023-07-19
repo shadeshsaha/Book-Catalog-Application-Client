@@ -19,14 +19,14 @@ const BookCard = ({ book }: IProps) => {
   const {
     id,
     title,
-    // bookDescription,
+    bookDescription,
     bookImage,
-    // price,
+    price,
     author,
     genre,
-    // rating,
+    rating,
     publicationDate,
-    // year,
+    year,
   } = book;
 
   const handleWishList = async (book: IBook) => {
@@ -34,7 +34,7 @@ const BookCard = ({ book }: IProps) => {
       const options = {
         data: { wishList: book, email: email },
       };
-      // const result = await createWishList(options).unwrap();
+      const result = await createWishList(options).unwrap();
       toast.success("Book is Added to Wishlist Successfully!");
     } catch (error) {
       toast.error("WishList is Already Exists");
